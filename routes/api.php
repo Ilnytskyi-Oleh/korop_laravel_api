@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Category\IndexController;
+use App\Http\Controllers\Api\Category\ShowController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'categories'], function(){
     Route::get('/', IndexController::class);
+    Route::get('/{category}', ShowController::class);
 });
 

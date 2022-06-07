@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Api\Category;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\Category\IndexResource;
+use App\Http\Resources\Api\Category\ShowResource;
 use App\Models\Category;
 
-class IndexController extends Controller
+class ShowController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Category $category)
     {
-        return IndexResource::collection(Category::all());
+        return new ShowResource($category);
     }
 }
