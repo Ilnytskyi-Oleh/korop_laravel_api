@@ -22,7 +22,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Api'], function(){
     Route::group(['prefix' => 'categories', 'namespace' => 'Category'], function(){
         Route::get('/', IndexController::class);
         Route::post('/', StoreController::class);
-        Route::get('/{category}', ShowController::class);
+        Route::put('/{category}', UpdateController::class);
+        Route::delete('/{category}', DeleteController::class);
     });
 
     Route::group(['prefix' => 'products', 'namespace' => 'Product'], function(){
