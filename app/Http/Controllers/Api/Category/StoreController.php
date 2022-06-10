@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
+
     public function __invoke(StoreRequest $request)
     {
-
         $data = $request->validated();
 
         if(isset($data['photo'])){
